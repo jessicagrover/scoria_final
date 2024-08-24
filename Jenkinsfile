@@ -74,12 +74,10 @@ pipeline {
             // Cleanup Docker resources
             echo 'Cleaning up Docker resources...'
             // sh 'docker system prune -f'
-            node {
                 script {
                     // Clean up Docker images and containers
                     sh 'docker system prune -f'
                 }
-            }
         }
         success {
             // Notification on success
