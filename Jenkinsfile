@@ -23,13 +23,13 @@ pipeline {
                 sh 'pip install -r requirements.txt'
             }
         }
-        stage('Clean Docker') {
-            steps {
-                script {
-                    sh 'docker system prune -f'
-                }
-            }
-        }
+        // stage('Clean Docker') {
+        //     steps {
+        //         script {
+        //             sh 'docker system prune -f'
+        //         }
+        //     }
+        // }
 
         stage('Run Tests') {
             steps {
