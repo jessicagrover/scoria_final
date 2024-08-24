@@ -4,7 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = "my-django-app"   // Customize the Docker image name
         GIT_REPO = "https://github.com/jessicagrover/scoria_final.git"
-        PATH= "/usr/local/bin/docker"
+        PATH= "/usr/local/bin/docker:/bin/sh"
+        
     }
   
 
