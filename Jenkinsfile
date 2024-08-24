@@ -30,7 +30,7 @@ pipeline {
             }
         }
 
-        stages {
+        
         stage('Check Docker') {
             steps {
                 script {
@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-    }
+        
 
         stage('Build Docker Image') {
             steps {
