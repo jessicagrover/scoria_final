@@ -30,6 +30,17 @@ pipeline {
             }
         }
 
+        stages {
+        stage('Check Docker') {
+            steps {
+                script {
+                    sh 'docker --version'
+                    sh 'docker ps'
+                }
+            }
+        }
+    }
+
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
