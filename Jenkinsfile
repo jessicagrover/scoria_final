@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "my-django-app"   // Customize the Docker image name
         GIT_REPO = "https://github.com/jessicagrover/scoria_final.git"
+        PATH= "/usr/local/bin/docker"
     }
   
 
@@ -20,6 +21,13 @@ pipeline {
                 // Upgrade pip and install dependencies from requirements.txt
                 sh 'pip install --upgrade pip'
                 sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Clean Docker') {
+            steps {
+                script {
+                    sh 'docker system prune -f'
+                }
             }
         }
 
