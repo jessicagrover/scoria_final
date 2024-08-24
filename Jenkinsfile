@@ -3,13 +3,15 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "my-django-app"   // Customize the Docker image name
+        GIT_REPO = "https://github.com/jessicagrover/scoria_final.git"
     }
+  
 
-    stages {
-        stage('Checkout Code') {
+
+      stages {
+        stage('Checkout') {
             steps {
-                // Clone the repository
-                git branch: 'main', url: 'https://github.com/jessicagrover/scoria_final.git'
+                git url: "${GIT_REPO}", branch: 'main'
             }
         }
 
